@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QRify</string>
+    <string name="read_qrs">Read QRs</string>
+    <string name="create_qrs">Create QRs</string>
 </resources>

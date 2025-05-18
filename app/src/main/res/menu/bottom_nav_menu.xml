@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/item_read"
+        android:title="@string/read_qrs"
+        android:icon="@drawable/ic_scanner_24"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/item_create"
+        android:title="@string/create_qrs"
+        android:icon="@drawable/ic_create_24"
+        app:showAsAction="always" />
+</menu>
