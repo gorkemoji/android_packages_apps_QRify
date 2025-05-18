@@ -7,6 +7,10 @@ android {
     namespace = "com.gorkemoji.qrify"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.gorkemoji.qrify"
         minSdk = 24
