@@ -10,6 +10,7 @@ material = "1.12.0"
 activity = "1.10.1"
 constraintlayout = "2.2.1"
 zxing = "4.3.0"
+zxing-embedded = "1.9"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -21,6 +22,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 zxing = { group = "com.journeyapps", name = "zxing-android-embedded", version.ref = "zxing" }
+zxing-embedded = { group = "me.dm7.barcodescanner", name = "zxing", version.ref = "zxing-embedded" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
