@@ -2,4 +2,6 @@
     <string name="app_name">QRify</string>
     <string name="read_qrs">Read QRs</string>
     <string name="create_qrs">Create QRs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
