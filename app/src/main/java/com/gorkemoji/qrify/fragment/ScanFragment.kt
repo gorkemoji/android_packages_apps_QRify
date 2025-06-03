@@ -39,7 +39,12 @@ class ScanFragment : Fragment(), ZXingScannerView.ResultHandler {
         scannerView.stopCamera()
     }
 
-    override fun handleResult(p0: Result?) { Toast.makeText(context, "Content: ${p0?.text}", Toast.LENGTH_LONG).show() }
+    override fun handleResult(p0: Result?) {
+        p0?.text?.let { content ->
+            val bottomSheet = ResultBottomSheetFragment(content)
+            bottomSheet.show(parentFragmentManager, "ScanResult")
+        }
+    }
 
     @Deprecated("Deprecated in Java")
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
