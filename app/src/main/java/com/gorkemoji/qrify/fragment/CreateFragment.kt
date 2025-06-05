@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.gorkemoji.qrify.R
 import com.gorkemoji.qrify.databinding.FragmentCreateBinding
 
 class CreateFragment : Fragment() {
@@ -13,7 +12,7 @@ class CreateFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCreateBinding.inflate(inflater, container, false)
         return binding.root
     }

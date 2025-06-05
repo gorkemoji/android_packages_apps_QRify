@@ -12,7 +12,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.zxing.Result
 import com.gorkemoji.qrify.R
-import com.gorkemoji.qrify.databinding.FragmentScanBinding
 import me.dm7.barcodescanner.zxing.ZXingScannerView
 
 class ScanFragment : Fragment(), ZXingScannerView.ResultHandler {
@@ -21,8 +20,15 @@ class ScanFragment : Fragment(), ZXingScannerView.ResultHandler {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         scannerView = ZXingScannerView(requireContext())
+        parentFragmentManager.setFragmentResultListener("bottom_sheet_dismissed_key", viewLifecycleOwner) { key, bundle ->
+
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                scannerView.setResultHandler(this)
+                scannerView.startCamera()
+            }
+        }
         return scannerView
     }
 
@@ -51,6 +57,6 @@ class ScanFragment : Fragment(), ZXingScannerView.ResultHandler {
         if (requestCode == 101 && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             scannerView.setResultHandler(this)
             scannerView.startCamera()
-        } else Toast.makeText(context, "Camera permission denied", Toast.LENGTH_SHORT).show()
+        } else Toast.makeText(context, getString(R.string.permissions_failed), Toast.LENGTH_SHORT).show()
     }
 }
