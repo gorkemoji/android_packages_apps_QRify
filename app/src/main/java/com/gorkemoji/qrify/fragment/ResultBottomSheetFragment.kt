@@ -2,6 +2,7 @@ package com.gorkemoji.qrify.fragment
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -17,7 +18,8 @@ import androidx.core.net.toUri
 import com.gorkemoji.qrify.R
 
 class ResultBottomSheetFragment(
-    private val resultText: String
+    private val resultText: String,
+    private val qrBitmap: Bitmap? = null
 ) : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentResultBottomSheetBinding
@@ -29,7 +31,38 @@ class ResultBottomSheetFragment(
         binding = FragmentResultBottomSheetBinding.inflate(inflater, container, false)
         binding.resultCnt.text = resultText
 
+        if (qrBitmap != null) {
+            binding.imageView.imageTintList = null
+            binding.imageView.setImageBitmap(qrBitmap)
+            binding.textResult.text = getString(R.string.qr_created)
+            binding.resultCnt.visibility = View.INVISIBLE
+            binding.btnAction.visibility = View.GONE
+            return binding.root
+        }
+
         when {
+            resultText.startsWith("tel:") -> {
+                binding.imageView.setImageResource(R.drawable.ic_phone_24)
+                binding.textResult.text = getString(R.string.phone_found)
+
+                binding.btnAction.apply {
+                    text = getString(R.string.dial_number)
+                    visibility = View.VISIBLE
+                    setOnClickListener { startActivity(Intent(Intent.ACTION_DIAL, resultText.toUri())) }
+                }
+            }
+
+            resultText.startsWith("mailto:") || resultText.startsWith("MAILTO:") -> {
+                binding.imageView.setImageResource(R.drawable.ic_mail_24)
+                binding.textResult.text = getString(R.string.email_found)
+
+                binding.btnAction.apply {
+                    text = getString(R.string.send_email)
+                    visibility = View.VISIBLE
+                    setOnClickListener { startActivity(Intent(Intent.ACTION_SENDTO, resultText.toUri())) }
+                }
+            }
+
             resultText.startsWith("http://") || resultText.startsWith("https://") -> {
                 binding.imageView.setImageResource(R.drawable.ic_link_24)
                 binding.textResult.text = getString(R.string.url_found)
@@ -69,12 +102,12 @@ class ResultBottomSheetFragment(
                 } else {
                     binding.imageView.setImageResource(R.drawable.ic_text_snippet_24)
                     binding.textResult.text = getString(R.string.text_found)
-                    binding.btnAction.visibility = View.GONE
+                    binding.btnAction.visibility = View.INVISIBLE
                 }
             } else -> {
                 binding.imageView.setImageResource(R.drawable.ic_text_snippet_24)
                 binding.textResult.text = getString(R.string.text_found)
-                binding.btnAction.visibility = View.GONE
+                binding.btnAction.visibility = View.INVISIBLE
             }
         }
 

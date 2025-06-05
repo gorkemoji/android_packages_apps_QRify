@@ -22,7 +22,7 @@ class ScanFragment : Fragment(), ZXingScannerView.ResultHandler {
         savedInstanceState: Bundle?
     ): View {
         scannerView = ZXingScannerView(requireContext())
-        parentFragmentManager.setFragmentResultListener("bottom_sheet_dismissed_key", viewLifecycleOwner) { key, bundle ->
+        parentFragmentManager.setFragmentResultListener("bottom_sheet_dismissed_key", viewLifecycleOwner) { _, _ ->
 
             if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                 scannerView.setResultHandler(this)

@@ -15,4 +15,16 @@
     <string name="suggestion_failed">Suggestion failed.</string>
     <string name="connect_to_wifi">Connect to Wi-Fi network</string>
     <string name="show_wifi_info">Show Wi-Fi info</string>
+    <string name="create_text">You can create various QRs here.</string>
+    <string name="text">Text</string>
+    <string name="url">URL</string>
+    <string name="phone">Phone</string>
+    <string name="e_mail">E-mail</string>
+    <string name="phone_found">A phone number found!</string>
+    <string name="email_found">An e-mail address found!</string>
+    <string name="dial_number">Dial number</string>
+    <string name="send_email">Send e-mail</string>
+    <string name="create">Create</string>
+    <string name="data_content">Data content</string>
+    <string name="qr_created">QR successfully created!</string>
 </resources>
