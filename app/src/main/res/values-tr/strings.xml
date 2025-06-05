@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QRify</string>
+    <string name="read_qrs">QR oku</string>
+    <string name="create_qrs">QR oluştur</string>
+    <string name="permissions_failed">İzinler verilmedi.</string>
+    <string name="result_icon">Sonuç simgesi.</string>
+    <string name="open_in_browser">Tarayıcıda aç</string>
+    <string name="text_found">Bir metin bulundu!</string>
+    <string name="url_found">Bir bağlantı bulundu!</string>
+    <string name="wifi_network_found">Bir Wi-Fi ağı bulundu!</string>
+    <string name="encryption">Güvenlik tipi</string>
+    <string name="password">Parola</string>
+    <string name="suggested_wifi">Wi-Fi ağı önerildi. Bağlanmak için Ayarlar\'a devam edin.</string>
+    <string name="suggestion_failed">Öneri başarısız.</string>
+    <string name="connect_to_wifi">Wi-Fi ağına bağlan</string>
+    <string name="show_wifi_info">Wi-Fi bilgisini göster</string>
+    <string name="create_text">Burada çeşitli QR kodlar oluşturabilirsiniz.</string>
+    <string name="text">Metin</string>
+    <string name="url">Bağlantı</string>
+    <string name="phone">Telefon</string>
+    <string name="e_mail">E-posta</string>
+    <string name="phone_found">Bir telefon numarası bulundu!</string>
+    <string name="email_found">Bir e-posta adresi bulundu!</string>
+    <string name="dial_number">Numarayı çevir</string>
+    <string name="send_email">E-posta gönder</string>
+    <string name="create">Oluştur</string>
+    <string name="data_content">Veri içeriği</string>
+    <string name="qr_created">QR başarıyla oluşturuldu!</string>
+</resources>

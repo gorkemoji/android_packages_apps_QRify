@@ -28,12 +28,12 @@ class CreateFragment : Fragment() {
         binding = FragmentCreateBinding.inflate(inflater, container, false)
 
         binding.editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
-        binding.writeButton.isEnabled = false
+        binding.createButton.isEnabled = false
 
         binding.editText.doAfterTextChanged { editable ->
             val input = editable?.toString()?.trim().orEmpty()
 
-            binding.writeButton.isEnabled = when (selectedQrType) {
+            binding.createButton.isEnabled = when (selectedQrType) {
                 "url" -> isValidUrl(input)
                 "phone" -> isValidPhone(input)
                 "email" -> isValidEmail(input)
@@ -64,11 +64,11 @@ class CreateFragment : Fragment() {
                     }
                 }
                 binding.editText.text?.clear()
-                binding.writeButton.isEnabled = false
+                binding.createButton.isEnabled = false
             }
         }
 
-        binding.writeButton.setOnClickListener {
+        binding.createButton.setOnClickListener {
             val inputContent = binding.editText.text.toString().trim()
             val qrCodeData: String
             var isValidInput = true
@@ -81,21 +81,21 @@ class CreateFragment : Fragment() {
                     else inputContent
 
                     if (!isValidUrl(inputContent)) {
-                        binding.writeButton.isEnabled = false
+                        binding.createButton.isEnabled = false
                         isValidInput = false
                     }
                 }
                 "phone" -> {
                     qrCodeData = "tel:$inputContent"
                     if (!isValidPhone(inputContent)) {
-                        binding.writeButton.isEnabled = false
+                        binding.createButton.isEnabled = false
                         isValidInput = false
                     }
                 }
                 "email" -> {
                     qrCodeData = "mailto:$inputContent"
                     if (!isValidEmail(inputContent)) {
-                        binding.writeButton.isEnabled = false
+                        binding.createButton.isEnabled = false
                         isValidInput = false
                     }
                 }

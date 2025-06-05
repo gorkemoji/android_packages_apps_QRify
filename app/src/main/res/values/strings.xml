@@ -2,13 +2,13 @@
     <string name="app_name">QRify</string>
     <string name="read_qrs">Read QRs</string>
     <string name="create_qrs">Create QRs</string>
-    <string name="permissions_failed">Permissions failed.</string>
+    <string name="permissions_failed">Permissions not granted.</string>
     <string name="result_icon">Result icon</string>
     <string name="open_in_browser">Open in Browser</string>
     <string name="text_found">A text found!</string>
     <string name="url_found">An URL found!</string>
     <string name="wifi_network_found">A Wi-Fi network found!</string>
-    <string name="ssid">SSID</string>
+    <string name="ssid" translatable="false">SSID</string>
     <string name="encryption">Encryption</string>
     <string name="password">Password</string>
     <string name="suggested_wifi">Wi-Fi network suggested. Continue to Settings to connect.</string>
