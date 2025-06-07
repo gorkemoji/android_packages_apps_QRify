@@ -11,19 +11,19 @@
 
 <table>
   <tr>
-    <td> <img src="./screenshots/qr_scan.png" height="620px" width="720px" /></td>
+    <td> <img src="./screenshots/qr_scan.png" height="720px" width="620px" /></td>
    </tr> 
 </table>
 
 <table>
   <tr>
-    <td> <img src="./screenshots/qr_generate.png" height="620px" width="720px" /></td>
+    <td> <img src="./screenshots/qr_generate.png" height="720px" width="620px" /></td>
    </tr> 
 </table>
 
 <table>
   <tr>
-    <td> <img src="./screenshots/output_qr.png" height="620px" width="720px" /></td>
+    <td> <img src="./screenshots/output_qr.png" height="720px" width="620px" /></td>
    </tr> 
 </table>
 
